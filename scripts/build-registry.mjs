@@ -46,7 +46,7 @@ writeFileSync(
   join(root, "public/tokens.dtcg.json"),
   `${JSON.stringify(
     {
-      $description: `Agentic UI colour tokens. Light values in $value, dark in $extensions["dev.agentic-ui"].dark. ${SITE_URL}/tokens`,
+      $description: `Looply colour tokens. Light values in $value, dark in $extensions["dev.agentic-ui"].dark. ${SITE_URL}/tokens`,
       color: Object.fromEntries(
         tokenList.map((t) => [
           t.name,
@@ -87,7 +87,7 @@ for (const slug of slugs) {
     type: "registry:ui",
     title: meta[slug]?.title ?? slug,
     description: meta[slug]?.summary ?? "",
-    author: `Agentic UI <${SITE_URL}>`,
+    author: `Looply <${SITE_URL}>`,
     categories: meta[slug] ? [meta[slug].category.toLowerCase(), "agent"] : ["agent"],
     dependencies,
     registryDependencies: [],
@@ -117,8 +117,8 @@ const brandItem = {
   name: "theme-brand",
   type: "registry:ui",
   title: "Brand theme",
-  description: "Give one hex colour and every Agentic UI component follows it, in light and dark, with contrast checked.",
-  author: `Agentic UI <${SITE_URL}>`,
+  description: "Give one hex colour and every Looply component follows it, in light and dark, with contrast checked.",
+  author: `Looply <${SITE_URL}>`,
   categories: ["theme"],
   dependencies: [],
   registryDependencies: [],
@@ -143,7 +143,7 @@ for (const sample of sampleThemes) {
     type: "registry:theme",
     title: `${sample.name} theme`,
     description: `Sets the brand colour to ${sample.name} (${sample.hex}) for light and dark, with contrast checked.`,
-    author: `Agentic UI <${SITE_URL}>`,
+    author: `Looply <${SITE_URL}>`,
     categories: ["theme"],
     cssVars: { light: t.light, dark: t.dark },
     docs: [

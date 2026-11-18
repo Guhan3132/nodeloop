@@ -4,7 +4,7 @@
   "type": "registry:ui",
   "title": "Human hand-off",
   "description": "Passes a chat to a person with the context attached, a real queue position, and a way out when no one is there.",
-  "author": "Agentic UI <https://agentic-component.vercel.app>",
+  "author": "Looply <https://agentic-component.vercel.app>",
   "categories": [
     "control",
     "agent"

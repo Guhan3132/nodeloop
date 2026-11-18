@@ -23,18 +23,18 @@ const description = "Live, copyable UX patterns for AI agents: streaming, trust,
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
-  title: { default: "Agentic UI: UX patterns for AI agents", template: "%s · Agentic UI" },
+  title: { default: "Looply: UX patterns for AI agents", template: "%s · Looply" },
   description,
   keywords: ["AI agent UI", "chat UI components", "shadcn", "React", "Tailwind", "human in the loop", "streaming UI"],
   alternates: { canonical: "/" },
   openGraph: {
     type: "website",
-    siteName: "Agentic UI",
-    title: "Agentic UI: UX patterns for AI agents",
+    siteName: "Looply",
+    title: "Looply: UX patterns for AI agents",
     description,
     url: "/",
   },
-  twitter: { card: "summary_large_image", title: "Agentic UI: UX patterns for AI agents", description },
+  twitter: { card: "summary_large_image", title: "Looply: UX patterns for AI agents", description },
 };
 
 export default function RootLayout({

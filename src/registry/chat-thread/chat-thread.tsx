@@ -1,7 +1,7 @@
 "use client";
 
 import { ArrowDown, BookOpen, Check, ChevronRight, Copy, Download, ExternalLink, FileText, Globe, Paperclip, RotateCw, ThumbsDown, ThumbsUp, TriangleAlert } from "lucide-react";
-import { AnimatePresence, motion } from "motion/react";
+import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 import { type ReactNode, useId, useLayoutEffect, useRef, useState } from "react";
 import { cn } from "@/lib/cn";
 
@@ -156,7 +156,7 @@ export function ChatThread({ messages, typing = false, busy, agentName = "AI Age
 
           {typing && (
             <div className="flex flex-col gap-2.5">
-              {typingNeedsName && <Who name={agentName} />}
+              {typingNeedsName && <Who name={agentName} working />}
               <div role="status" aria-label={`${agentName} is typing`} className="flex h-6 items-center gap-1">
                 {[0, 1, 2].map((i) => (
                   <span key={i} aria-hidden className="size-1.5 animate-bounce rounded-full bg-muted-foreground/60" style={{ animationDelay: `${i * 140}ms` }} />
@@ -200,11 +200,11 @@ export function ChatThread({ messages, typing = false, busy, agentName = "AI Age
   );
 }
 
-/** Name row above an agent's messages: a sparkle for the AI, a photo or initial for a person. */
-function Who({ name, sender }: { name: string; sender?: ChatMessage["sender"] }) {
+/** Name row above an agent's messages: the agent mark for the AI (animated while it works), a photo or initial for a person. */
+function Who({ name, sender, working }: { name: string; sender?: ChatMessage["sender"]; working?: boolean }) {
   return (
     <p className="flex items-center gap-2 text-[15px] font-semibold text-foreground @md:text-sm">
-      {sender ? <Avatar name={sender.name} src={sender.avatar} /> : <AiStar />}
+      {sender ? <Avatar name={sender.name} src={sender.avatar} /> : <AgentMark working={working} />}
       {name}
     </p>
   );
@@ -266,7 +266,7 @@ function AgentTurn({
 
   return (
     <div className="flex flex-col gap-2.5">
-      <Who name={turn.who} sender={turn.sender} />
+      <Who name={turn.who} sender={turn.sender} working={fresh && !showActions} />
       <div className="flex flex-col gap-5">
         {turn.items.map((m, i) => (
           <AgentMessage key={m.id} m={m} fresh={fresh && i === turn.items.length - 1} />
@@ -471,25 +471,70 @@ function FileCard({ file, raised }: { file: ChatFile; raised?: boolean }) {
   );
 }
 
-/** The AI mark: a large and two small four-point stars, filled with a gradient. */
-export function AiStar() {
-  const id = "ai-star-" + useId().replace(/:/g, "");
+// One loop of the working animation: rest, travel in, merge, pull free, spring back.
+const LOOP = "2.6s";
+
+/**
+ * The agent mark: an open loop with the agent node in its gap. The ring and centre take the text
+ * colour, the node takes --primary. While `working`, the node travels into the centre, fuses with it
+ * like a drop of water (a blur-and-threshold "goo" filter), turns the drop solid primary, then pulls
+ * free and springs back. With reduced motion it stays still.
+ */
+export function AgentMark({ working = false, size = 24 }: { working?: boolean; size?: number }) {
+  const goo = "agent-goo-" + useId().replace(/:/g, "");
+  const calm = useReducedMotion();
+  const animate = working && !calm;
+  const spline = { calcMode: "spline" as const, dur: LOOP, repeatCount: "indefinite" };
   return (
-    <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden className="shrink-0">
+    <svg width={size} height={size} viewBox="12 11 42 42" fill="none" aria-hidden className="shrink-0 text-foreground">
       <defs>
-        <linearGradient id={id} x1="3" y1="21" x2="21" y2="3" gradientUnits="userSpaceOnUse">
-          <stop offset="0" stopColor="#ec4899" />
-          <stop offset="0.55" stopColor="#a855f7" />
-          <stop offset="1" stopColor="#3b82f6" />
-        </linearGradient>
+        <filter id={goo} filterUnits="userSpaceOnUse" x="12" y="11" width="42" height="42" colorInterpolationFilters="sRGB">
+          <feGaussianBlur in="SourceGraphic" stdDeviation="2.1" />
+          <feColorMatrix values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 20 -8" />
+        </filter>
       </defs>
-      <g fill={`url(#${id})`}>
-        <path d="M10 3.5l1.9 5.3 5.3 1.9-5.3 1.9L10 17.9l-1.9-5.3-5.3-1.9 5.3-1.9z" />
-        <path d="M18.5 2.5l.9 2.4 2.4.9-2.4.9-.9 2.4-.9-2.4-2.4-.9 2.4-.9z" />
-        <path d="M18 14.5l.7 1.8 1.8.7-1.8.7-.7 1.8-.7-1.8-1.8-.7 1.8-.7z" />
+      <path d="M32 17A15 15 0 1 0 47 32" stroke="currentColor" strokeWidth="5" strokeLinecap="round" />
+      <g filter={animate ? `url(#${goo})` : undefined}>
+        <g transform="translate(32 32)">
+          <g>
+            {animate && (
+              <animateTransform
+                attributeName="transform"
+                type="scale"
+                values="1;1;1.3 1.24;1.22 1.3;1.28;0.94;1;1"
+                keyTimes="0;0.36;0.46;0.52;0.58;0.7;0.8;1"
+                keySplines="0 0 1 1;.4 0 .6 1;.4 0 .6 1;.4 0 .6 1;.4 0 .6 1;.4 0 .6 1;0 0 1 1"
+                {...spline}
+              />
+            )}
+            <circle r={animate ? 4.5 : 4} fill="currentColor" />
+            {animate && (
+              <circle r="4.5" style={{ fill: "var(--primary)" }} opacity="0">
+                <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.3;0.4;0.64;0.78;1" keySplines="0 0 1 1;.4 0 .6 1;0 0 1 1;.4 0 .6 1;0 0 1 1" {...spline} />
+              </circle>
+            )}
+          </g>
+        </g>
+        <circle cx="47" cy="17" r={animate ? 4.5 : 4} style={{ fill: "var(--primary)" }}>
+          {animate && (
+            <animateTransform
+              attributeName="transform"
+              type="translate"
+              values="0 0;0 0;-15 15;-15 15;-13 13;0 0;0 0"
+              keyTimes="0;0.12;0.42;0.58;0.66;0.9;1"
+              keySplines="0 0 1 1;.55 0 .85 .35;0 0 1 1;.6 0 .2 1;.15 .65 .3 1;0 0 1 1"
+              {...spline}
+            />
+          )}
+        </circle>
       </g>
     </svg>
   );
+}
+
+/** @deprecated Kept so existing imports keep working. Use AgentMark. */
+export function AiStar({ working }: { working?: boolean } = {}) {
+  return <AgentMark working={working} />;
 }
 
 /** A round photo, or an initial on a colour tinted from the name when there is no photo. */

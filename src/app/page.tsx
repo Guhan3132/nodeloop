@@ -10,7 +10,7 @@ export default function Home() {
     <main>
       <section className="mx-auto max-w-6xl px-5 pb-14 pt-10 sm:pb-20 sm:pt-16">
         <span className="inline-flex items-center gap-2 rounded-md border border-border bg-card py-1 pl-1 pr-3 text-xs font-medium text-foreground/80">
-          <Logo size={20} className="rounded" />
+          <Logo size={20} />
           {patterns.length} patterns, MIT licensed
         </span>
 

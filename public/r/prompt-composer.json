@@ -4,7 +4,7 @@
   "type": "registry:ui",
   "title": "Prompt composer",
   "description": "A chat-style message box for agents: / commands, @ context, image paste, mode and model under the box, steering a running agent, and a full voice mode. Built for phones as well as desktops.",
-  "author": "Agentic UI <https://agentic-component.vercel.app>",
+  "author": "Looply <https://agentic-component.vercel.app>",
   "categories": [
     "control",
     "agent"

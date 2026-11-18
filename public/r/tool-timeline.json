@@ -4,7 +4,7 @@
   "type": "registry:ui",
   "title": "Tool-call timeline",
   "description": "A step-by-step record of what the agent did, with real outcomes, including failures.",
-  "author": "Agentic UI <https://agentic-component.vercel.app>",
+  "author": "Looply <https://agentic-component.vercel.app>",
   "categories": [
     "act",
     "agent"

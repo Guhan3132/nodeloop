@@ -36,7 +36,7 @@ test("the main pages load with the site name in the title", async () => {
   for (const path of ["/", "/about", "/get-started", "/playground", "/tokens", "/customize"]) {
     const res = await get(path);
     assert.equal(res.status, 200, path);
-    assert.match(await res.text(), /<title>[^<]*Agentic UI/, `${path} title`);
+    assert.match(await res.text(), /<title>[^<]*Looply/, `${path} title`);
   }
 });
 

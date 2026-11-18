@@ -4,7 +4,7 @@
   "type": "registry:ui",
   "title": "Citations",
   "description": "Inline numbered sources that open the exact quote, a visible flag on any claim that has none, and the reasoning steps one click away.",
-  "author": "Agentic UI <https://agentic-component.vercel.app>",
+  "author": "Looply <https://agentic-component.vercel.app>",
   "categories": [
     "trust",
     "agent"

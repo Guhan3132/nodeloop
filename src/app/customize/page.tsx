@@ -4,7 +4,7 @@ import { CodeBlock } from "@/components/CodeBlock";
 
 export const metadata: Metadata = {
   title: "Customising components",
-  description: "How to change colour, radius, fonts, spacing, icons, motion and wording in Agentic UI components, and what to keep when you do.",
+  description: "How to change colour, radius, fonts, spacing, icons, motion and wording in Looply components, and what to keep when you do.",
   alternates: { canonical: "/customize" },
 };
 

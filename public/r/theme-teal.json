@@ -4,7 +4,7 @@
   "type": "registry:theme",
   "title": "Teal theme",
   "description": "Sets the brand colour to Teal (#0d9488) for light and dark, with contrast checked.",
-  "author": "Agentic UI <https://agentic-component.vercel.app>",
+  "author": "Looply <https://agentic-component.vercel.app>",
   "categories": [
     "theme"
   ],

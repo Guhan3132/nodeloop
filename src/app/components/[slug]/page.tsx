@@ -5,6 +5,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { CodeBlock } from "@/components/CodeBlock";
 import { CopyMenu } from "@/components/CopyMenu";
+import { Logo } from "@/components/Logo";
 import { depsOf } from "@/lib/prompts";
 import { RemixButton, SaveButton } from "@/components/PageActions";
 import { PatternCard } from "@/components/PatternCard";
@@ -26,8 +27,8 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     title: p.title,
     description: p.summary,
     alternates: { canonical: url },
-    openGraph: { type: "article", title: `${p.title} · Agentic UI`, description: p.summary, url },
-    twitter: { card: "summary_large_image", title: `${p.title} · Agentic UI`, description: p.summary },
+    openGraph: { type: "article", title: `${p.title} · Looply`, description: p.summary, url },
+    twitter: { card: "summary_large_image", title: `${p.title} · Looply`, description: p.summary },
   };
 }
 
@@ -79,8 +80,8 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
           </Link>
           <span className="text-muted-foreground">by</span>
           <span className="flex items-center gap-2 font-medium text-foreground">
-            <span className="grid h-6 w-6 place-items-center rounded-full bg-muted text-[10px] font-semibold text-foreground/80">A</span>
-            Agentic UI
+            <Logo size={18} />
+            Looply
           </span>
         </div>
 
@@ -200,7 +201,7 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
               ))}
             </div>
           </Meta>
-          <Meta title="Author">Agentic UI</Meta>
+          <Meta title="Author">Looply</Meta>
           <Meta title="Category">{pattern.category}</Meta>
           <Meta title="Added in">v{pattern.since ?? "0.1.0"}</Meta>
           <Meta title="License">MIT License</Meta>

@@ -4,7 +4,7 @@
   "type": "registry:ui",
   "title": "Plan",
   "description": "Before the run, the agent proposes steps you can edit, reorder or remove. During it, a live checklist shows what is done, what is running and what is next.",
-  "author": "Agentic UI <https://agentic-component.vercel.app>",
+  "author": "Looply <https://agentic-component.vercel.app>",
   "categories": [
     "act",
     "agent"

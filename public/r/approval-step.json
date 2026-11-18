@@ -4,7 +4,7 @@
   "type": "registry:ui",
   "title": "Approval step",
   "description": "A human-in-the-loop gate that scales friction with the risk of the action.",
-  "author": "Agentic UI <https://agentic-component.vercel.app>",
+  "author": "Looply <https://agentic-component.vercel.app>",
   "categories": [
     "control",
     "agent"

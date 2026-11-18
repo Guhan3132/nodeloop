@@ -4,7 +4,7 @@
   "type": "registry:ui",
   "title": "Streaming response",
   "description": "Text that arrives as it is written, with stop, retry and a clear failure state, and a one-line activity status with a timer for the work in between.",
-  "author": "Agentic UI <https://agentic-component.vercel.app>",
+  "author": "Looply <https://agentic-component.vercel.app>",
   "categories": [
     "respond",
     "agent"

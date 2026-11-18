@@ -4,7 +4,7 @@
   "type": "registry:ui",
   "title": "Error recovery",
   "description": "Says what failed, what survived and what to do next, with a visible auto-retry and a way forward when retrying stops helping.",
-  "author": "Agentic UI <https://agentic-component.vercel.app>",
+  "author": "Looply <https://agentic-component.vercel.app>",
   "categories": [
     "respond",
     "agent"

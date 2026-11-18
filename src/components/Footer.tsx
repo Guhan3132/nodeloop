@@ -45,8 +45,8 @@ export function Footer() {
       <div className="mx-auto grid max-w-6xl gap-10 px-5 py-12 sm:grid-cols-[1.4fr_repeat(3,1fr)]">
         <div>
           <Link href="/" className="flex items-center gap-2 text-[15px] font-semibold tracking-tight">
-            <Logo size={24} className="rounded-md" />
-            Agentic UI
+            <Logo size={24} />
+            Looply
           </Link>
           <p className="mt-3 max-w-xs text-sm leading-relaxed text-muted-foreground">
             Open-source UX patterns for AI agents. Click them, break them, copy them.

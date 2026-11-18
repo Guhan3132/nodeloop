@@ -1,5 +1,5 @@
 {
-  "$description": "Agentic UI colour tokens. Light values in $value, dark in $extensions[\"dev.agentic-ui\"].dark. https://agentic-component.vercel.app/tokens",
+  "$description": "Looply colour tokens. Light values in $value, dark in $extensions[\"dev.agentic-ui\"].dark. https://agentic-component.vercel.app/tokens",
   "color": {
     "background": {
       "$type": "color",

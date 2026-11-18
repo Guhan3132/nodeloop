@@ -4,7 +4,7 @@
   "type": "registry:ui",
   "title": "Multi-agent status",
   "description": "Several agents at once, sorted by what needs you, with a one-line summary and a plain reason for every wait.",
-  "author": "Agentic UI <https://agentic-component.vercel.app>",
+  "author": "Looply <https://agentic-component.vercel.app>",
   "categories": [
     "act",
     "agent"

@@ -10,7 +10,7 @@ import { themeInlineCss, tokenCss } from "@/theme/token-css";
 
 export const metadata: Metadata = {
   title: "Get started",
-  description: "Add an Agentic UI pattern to your React project with the shadcn CLI in a few minutes.",
+  description: "Add a Looply pattern to your React project with the shadcn CLI in a few minutes.",
   alternates: { canonical: "/get-started" },
 };
 

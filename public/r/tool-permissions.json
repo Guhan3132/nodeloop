@@ -4,7 +4,7 @@
   "type": "registry:ui",
   "title": "Tool permissions",
   "description": "What the agent may do, one line per tool: allow, ask first or block, with plain-words risk and a clear way to answer a request.",
-  "author": "Agentic UI <https://agentic-component.vercel.app>",
+  "author": "Looply <https://agentic-component.vercel.app>",
   "categories": [
     "control",
     "agent"

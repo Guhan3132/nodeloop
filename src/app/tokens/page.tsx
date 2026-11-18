@@ -12,7 +12,7 @@ import { themeInlineCss, tokenCss } from "@/theme/token-css";
 
 export const metadata: Metadata = {
   title: "Tokens and theming",
-  description: "The colour tokens every Agentic UI component reads, how to give them your brand colour, and the contrast they reach.",
+  description: "The colour tokens every Looply component reads, how to give them your brand colour, and the contrast they reach.",
   alternates: { canonical: "/tokens" },
 };
 

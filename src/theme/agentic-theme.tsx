@@ -4,7 +4,7 @@ import { deriveTheme, themeCss } from "./derive";
 export * from "./derive";
 
 /**
- * Brand theming for Agentic UI. Give it one hex colour and it works out the three tokens a brand
+ * Brand theming for Looply. Give it one hex colour and it works out the three tokens a brand
  * touches (primary, primary-foreground, ring) for light and dark, and checks them for contrast:
  *
  *   <AgenticTheme brand="#7c3aed">...components...</AgenticTheme>

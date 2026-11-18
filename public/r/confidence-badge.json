@@ -4,7 +4,7 @@
   "type": "registry:ui",
   "title": "Confidence badge",
   "description": "A plain-language signal for how sure the agent is, with a reason and a next step.",
-  "author": "Agentic UI <https://agentic-component.vercel.app>",
+  "author": "Looply <https://agentic-component.vercel.app>",
   "categories": [
     "trust",
     "agent"

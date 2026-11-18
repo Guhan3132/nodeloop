@@ -208,7 +208,7 @@
       "name": "theme-brand",
       "type": "registry:ui",
       "title": "Brand theme",
-      "description": "Give one hex colour and every Agentic UI component follows it, in light and dark, with contrast checked.",
+      "description": "Give one hex colour and every Looply component follows it, in light and dark, with contrast checked.",
       "dependencies": [],
       "files": [
         {
@@ -220,6 +220,12 @@
           "type": "registry:ui"
         }
       ]
+    },
+    {
+      "name": "theme-blue",
+      "type": "registry:theme",
+      "title": "Blue theme",
+      "description": "Sets the brand colour to Blue (#2563eb) for light and dark, with contrast checked."
     },
     {
       "name": "theme-graphite",
@@ -238,12 +244,6 @@
       "type": "registry:theme",
       "title": "Indigo theme",
       "description": "Sets the brand colour to Indigo (#4f46e5) for light and dark, with contrast checked."
-    },
-    {
-      "name": "theme-blue",
-      "type": "registry:theme",
-      "title": "Blue theme",
-      "description": "Sets the brand colour to Blue (#2563eb) for light and dark, with contrast checked."
     },
     {
       "name": "theme-teal",

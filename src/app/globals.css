@@ -2,6 +2,18 @@
 /* Colour tokens: generated from src/lib/tokens.json, the one source the registry also uses. */
 @import "./tokens.css";
 
+/* Looply brand: the site and its previews use Loop Blue (#2563eb, derived by src/theme/derive.ts:
+   5.17:1 for white text). Installed components keep the neutral defaults from tokens.json. Same
+   specificity as tokens.css and later, so it wins; a colour picked in the brand switcher still wins
+   over this, because the switcher's selectors are more specific. */
+:root,
+.light,
+.dark {
+  --primary: oklch(0.5461 0.2152 262.88);
+  --primary-foreground: oklch(1 0 0);
+  --ring: oklch(0.5461 0.2152 262.88);
+}
+
 /* Dark mode is scoped: any element with the `dark` class (and its children) switches theme. */
 /* A .light element inside a .dark one switches back, so a single preview can be forced light. */
 @custom-variant dark (&:where(.dark, .dark *):not(:where(.light, .light *)));

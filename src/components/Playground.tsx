@@ -8,7 +8,7 @@ import { tokens } from "@/lib/simulator/helpers";
 import type { AgentEvent, Step } from "@/lib/simulator/types";
 import { useAgentSimulator } from "@/lib/simulator/useAgentSimulator";
 import { ApprovalStep } from "@/registry/approval-step/approval-step";
-import { AiStar, ChatThread, type ChatMessage } from "@/registry/chat-thread/chat-thread";
+import { AgentMark, ChatThread, type ChatMessage } from "@/registry/chat-thread/chat-thread";
 import { ConfidenceBadge } from "@/registry/confidence-badge/confidence-badge";
 import { PlanPreview, type PlanItem } from "@/registry/plan-preview/plan-preview";
 import { PromptComposer } from "@/registry/prompt-composer/prompt-composer";
@@ -258,9 +258,7 @@ function PlaygroundChat() {
           <div className="flex min-h-0 flex-1 flex-col items-center overflow-y-auto py-6 text-center [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
             <div className="my-auto flex w-full flex-col items-center gap-6">
             <span aria-hidden className="grid size-14 place-items-center rounded-2xl border border-border bg-card shadow-sm">
-              <span className="scale-[1.6]">
-                <AiStar />
-              </span>
+              <AgentMark size={36} />
             </span>
             <div className="max-w-md">
               <h1 className="text-2xl font-semibold @md:text-3xl">Welcome to the playground</h1>

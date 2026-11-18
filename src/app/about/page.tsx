@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "About",
-  description: "Why Agentic UI exists, what is in it, how it differs from general component libraries, and how to contribute.",
+  description: "Why Looply exists, what is in it, how it differs from general component libraries, and how to contribute.",
   alternates: { canonical: "/about" },
 };
 
@@ -26,10 +26,10 @@ export default function About() {
   return (
     <main className="pb-24 pt-10">
       <div className="mx-auto max-w-3xl px-5">
-        <h1 className="text-4xl font-semibold sm:text-5xl">About Agentic UI</h1>
+        <h1 className="text-4xl font-semibold sm:text-5xl">About Looply</h1>
         <p className="mt-4 text-lg leading-relaxed text-muted-foreground">
           Most AI interfaces look the same and fail the same way: a blank wait, a confident wrong answer, an action that ran before anyone
-          agreed to it. Agentic UI is a small library of patterns that handle those moments well, and you can feel each one before you
+          agreed to it. Looply is a small library of patterns that handle those moments well, and you can feel each one before you
           build it.
         </p>
 
@@ -51,7 +51,7 @@ export default function About() {
 
         <H2>How it compares with 21st.dev</H2>
         <p className="mt-4 text-muted-foreground">
-          21st.dev is a large community marketplace of general components, and it is great for that. Agentic UI is narrower on purpose: it
+          21st.dev is a large community marketplace of general components, and it is great for that. Looply is narrower on purpose: it
           is about how an agent should behave on screen.
         </p>
         <div className="mt-5 overflow-x-auto rounded-xl border border-border bg-card">
@@ -60,7 +60,7 @@ export default function About() {
               <tr>
                 <th className="px-4 py-2 font-medium" />
                 <th className="px-4 py-2 font-medium">21st.dev</th>
-                <th className="px-4 py-2 font-medium">Agentic UI</th>
+                <th className="px-4 py-2 font-medium">Looply</th>
               </tr>
             </thead>
             <tbody>

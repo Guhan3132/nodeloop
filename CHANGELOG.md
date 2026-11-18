@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.6.0 (2026-11-18)
+
+- New name and identity: Agentic UI is now Looply. The logo is an open loop with the agent node in its gap, with no background in the UI; the white tile is kept for the favicon and app icon. Social images use the new mark
+- Loop Blue (#2563eb) is the site's primary colour and the brand switcher's default. Installed components keep the neutral token defaults
+- Chat thread: the agent mark is the Looply loop (`AgentMark`). While the agent is typing or streaming, the node merges into the centre as one drop and pulls back out; it stays still with reduced motion. `AiStar` still works and draws the new mark
+
 ## 0.5.0 (2026-11-03)
 
 - 19 patterns become 13: activity indicator joins streaming response, why this answer joins citations, feedback thumbs joins the chat thread, task checklist joins plan preview (now "Plan"), interrupt and steer and voice input join the prompt composer. Their components are still exported from the new files; old pages redirect and old install URLs serve the last version (0.4.0). The "Learn" category is gone
