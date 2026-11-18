@@ -16,7 +16,7 @@ export function Header() {
         <div className="flex items-center gap-8">
           <Link href="/" className="flex shrink-0 items-center gap-2 whitespace-nowrap text-[15px] font-semibold tracking-tight">
             <Logo size={24} />
-            Looply
+            Nodeloop
           </Link>
           <nav aria-label="Main" className="hidden items-center gap-1 text-sm font-medium text-muted-foreground sm:flex">
             {links.map((l) => (

@@ -4,7 +4,7 @@ import { CodeBlock } from "@/components/CodeBlock";
 
 export const metadata: Metadata = {
   title: "Customising components",
-  description: "How to change colour, radius, fonts, spacing, icons, motion and wording in Looply components, and what to keep when you do.",
+  description: "How to change colour, radius, fonts, spacing, icons, motion and wording in Nodeloop components, and what to keep when you do.",
   alternates: { canonical: "/customize" },
 };
 
@@ -126,7 +126,7 @@ export default function Customize() {
           <p>
             Components follow a <code>.dark</code> class on any ancestor, the shadcn convention. Put it on <code>&lt;html&gt;</code> for the whole app, or on
             one container to preview a single section. Dark values come from the same tokens, including a brand colour set with{" "}
-            <code>LooplyTheme</code>.
+            <code>NodeloopTheme</code>.
           </p>
         </Section>
 
@@ -152,7 +152,7 @@ export default function Customize() {
             <li>Contrast of at least 4.5:1 for text and 3:1 for focus rings and controls</li>
           </ul>
           <p>
-            Ran into something that is hard to change? <a className="text-foreground underline" href="https://github.com/Guhan3132/looply/issues/new/choose" target="_blank" rel="noreferrer">Open an issue</a>.
+            Ran into something that is hard to change? <a className="text-foreground underline" href="https://github.com/Guhan3132/nodeloop/issues/new/choose" target="_blank" rel="noreferrer">Open an issue</a>.
           </p>
         </Section>
       </div>

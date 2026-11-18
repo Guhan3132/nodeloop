@@ -27,8 +27,8 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     title: p.title,
     description: p.summary,
     alternates: { canonical: url },
-    openGraph: { type: "article", title: `${p.title} · Looply`, description: p.summary, url },
-    twitter: { card: "summary_large_image", title: `${p.title} · Looply`, description: p.summary },
+    openGraph: { type: "article", title: `${p.title} · Nodeloop`, description: p.summary, url },
+    twitter: { card: "summary_large_image", title: `${p.title} · Nodeloop`, description: p.summary },
   };
 }
 
@@ -81,7 +81,7 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
           <span className="text-muted-foreground">by</span>
           <span className="flex items-center gap-2 font-medium text-foreground">
             <Logo size={18} />
-            Looply
+            Nodeloop
           </span>
         </div>
 
@@ -201,7 +201,7 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
               ))}
             </div>
           </Meta>
-          <Meta title="Author">Looply</Meta>
+          <Meta title="Author">Nodeloop</Meta>
           <Meta title="Category">{pattern.category}</Meta>
           <Meta title="Added in">v{pattern.since ?? "0.1.0"}</Meta>
           <Meta title="License">MIT License</Meta>

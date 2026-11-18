@@ -4,7 +4,7 @@
   "type": "registry:theme",
   "title": "Graphite theme",
   "description": "Sets the brand colour to Graphite (#18181b) for light and dark, with contrast checked.",
-  "author": "Looply <https://looply-ui.vercel.app>",
+  "author": "Nodeloop <https://nodeloop.vercel.app>",
   "categories": [
     "theme"
   ],

@@ -1,5 +1,5 @@
 /**
- * Colour maths and the brand theme, with no dependencies and no React. It is used by LooplyTheme,
+ * Colour maths and the brand theme, with no dependencies and no React. It is used by NodeloopTheme,
  * by the website, and by the build that writes the installable presets. Output colours are OKLCH,
  * like the shadcn and Tailwind v4 defaults.
  */

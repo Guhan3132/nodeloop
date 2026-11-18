@@ -10,7 +10,7 @@ import { themeInlineCss, tokenCss } from "@/theme/token-css";
 
 export const metadata: Metadata = {
   title: "Get started",
-  description: "Add a Looply pattern to your React project with the shadcn CLI in a few minutes.",
+  description: "Add a Nodeloop pattern to your React project with the shadcn CLI in a few minutes.",
   alternates: { canonical: "/get-started" },
 };
 
@@ -83,7 +83,7 @@ export default function GetStarted() {
           <CodeBlock code={`npx shadcn@latest add "${origin}/r/v${LATEST_RELEASE}/approval-step.json"`} file="terminal" />
           <p>
             Check any file against <a className="text-foreground underline" href="/r/checksums.txt">the published checksums</a>. Releases are listed on{" "}
-            <a className="text-foreground underline" href="https://github.com/Guhan3132/looply/releases" target="_blank" rel="noreferrer">
+            <a className="text-foreground underline" href="https://github.com/Guhan3132/nodeloop/releases" target="_blank" rel="noreferrer">
               GitHub
             </a>
             .

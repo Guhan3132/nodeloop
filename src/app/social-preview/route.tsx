@@ -10,7 +10,7 @@ export function GET() {
       <div style={{ width: "100%", height: "100%", display: "flex", flexDirection: "column", justifyContent: "center", padding: 100, background: "#ffffff", color: "#18181b" }}>
         <div style={{ display: "flex", alignItems: "center", gap: 22 }}>
           <LogoOg size={58} color="#18181b" />
-          <div style={{ fontSize: 52, fontWeight: 600, letterSpacing: -1.6 }}>looply</div>
+          <div style={{ fontSize: 52, fontWeight: 600, letterSpacing: -1.6 }}>nodeloop</div>
         </div>
         <div style={{ marginTop: 44, fontSize: 84, fontWeight: 700, lineHeight: 1.05, letterSpacing: -2 }}>UX patterns for AI agents you can feel.</div>
         <div style={{ marginTop: 30, fontSize: 34, color: "#52525b" }}>Open-source React components. Live, copyable, shadcn-ready.</div>

@@ -9,7 +9,7 @@ import { track } from "@/lib/track";
 
 const KEY = SAVED_KEY;
 
-const EVENT = "looply:saved-change";
+const EVENT = "nodeloop:saved-change";
 let memory: string[] = [];
 
 const read = (): string[] => {

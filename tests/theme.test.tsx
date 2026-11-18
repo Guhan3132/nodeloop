@@ -1,6 +1,6 @@
 import { render } from "@testing-library/react";
 import { describe, expect, it } from "vitest";
-import { AgenticTheme, LooplyTheme, contrast, deriveTheme, parseColor, parseHex, themeCss, toHex, wcagLevel } from "@/theme/looply-theme";
+import { AgenticTheme, LooplyTheme, NodeloopTheme, contrast, deriveTheme, parseColor, parseHex, themeCss, toHex, wcagLevel } from "@/theme/nodeloop-theme";
 import { sampleThemes } from "@/theme/samples";
 
 const DARK_CARD = parseHex("#171717")!;
@@ -140,7 +140,7 @@ describe("options and report", () => {
   });
 });
 
-describe("themeCss and LooplyTheme", () => {
+describe("themeCss and NodeloopTheme", () => {
   it("writes a light and a dark block", () => {
     const css = themeCss(deriveTheme("#7c3aed")!);
     expect(css).toContain(":root { --primary:oklch(");
@@ -149,28 +149,29 @@ describe("themeCss and LooplyTheme", () => {
 
   it("scopes the variables to its own subtree and follows .dark", () => {
     const { container } = render(
-      <LooplyTheme brand="#7c3aed">
+      <NodeloopTheme brand="#7c3aed">
         <span>inside</span>
-      </LooplyTheme>,
+      </NodeloopTheme>,
     );
-    const wrapper = container.querySelector("[data-looply-theme]")!;
+    const wrapper = container.querySelector("[data-nodeloop-theme]")!;
     const css = container.querySelector("style")!.textContent!;
-    expect(css).toContain(`[data-looply-theme="${wrapper.getAttribute("data-looply-theme")}"]`);
-    expect(css).toContain(".dark [data-looply-theme");
+    expect(css).toContain(`[data-nodeloop-theme="${wrapper.getAttribute("data-nodeloop-theme")}"]`);
+    expect(css).toContain(".dark [data-nodeloop-theme");
     expect(wrapper).toHaveTextContent("inside");
   });
 
   it("changes nothing for an invalid colour", () => {
     const { container } = render(
-      <LooplyTheme brand="not a colour">
+      <NodeloopTheme brand="not a colour">
         <span>inside</span>
-      </LooplyTheme>,
+      </NodeloopTheme>,
     );
     expect(container.querySelector("style")).toBeNull();
     expect(container).toHaveTextContent("inside");
   });
 
-  it("keeps AgenticTheme as an alias, so code written before 0.7.0 still works", () => {
-    expect(AgenticTheme).toBe(LooplyTheme);
+  it("keeps AgenticTheme and LooplyTheme as aliases, so code written under the old names still works", () => {
+    expect(AgenticTheme).toBe(NodeloopTheme);
+    expect(LooplyTheme).toBe(NodeloopTheme);
   });
 });

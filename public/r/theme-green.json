@@ -4,7 +4,7 @@
   "type": "registry:theme",
   "title": "Green theme",
   "description": "Sets the brand colour to Green (#16a34a) for light and dark, with contrast checked.",
-  "author": "Looply <https://looply-ui.vercel.app>",
+  "author": "Nodeloop <https://nodeloop.vercel.app>",
   "categories": [
     "theme"
   ],

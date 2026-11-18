@@ -1,7 +1,7 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry.json",
-  "name": "looply",
-  "homepage": "https://looply-ui.vercel.app",
+  "name": "nodeloop",
+  "homepage": "https://nodeloop.vercel.app",
   "items": [
     {
       "name": "agent-memory",
@@ -13,7 +13,7 @@
       ],
       "files": [
         {
-          "path": "registry/looply/agent-memory.tsx",
+          "path": "registry/nodeloop/agent-memory.tsx",
           "type": "registry:ui"
         }
       ]
@@ -29,7 +29,7 @@
       ],
       "files": [
         {
-          "path": "registry/looply/approval-step.tsx",
+          "path": "registry/nodeloop/approval-step.tsx",
           "type": "registry:ui"
         }
       ]
@@ -45,7 +45,7 @@
       ],
       "files": [
         {
-          "path": "registry/looply/chat-thread.tsx",
+          "path": "registry/nodeloop/chat-thread.tsx",
           "type": "registry:ui"
         }
       ]
@@ -61,7 +61,7 @@
       ],
       "files": [
         {
-          "path": "registry/looply/citations.tsx",
+          "path": "registry/nodeloop/citations.tsx",
           "type": "registry:ui"
         }
       ]
@@ -76,7 +76,7 @@
       ],
       "files": [
         {
-          "path": "registry/looply/confidence-badge.tsx",
+          "path": "registry/nodeloop/confidence-badge.tsx",
           "type": "registry:ui"
         }
       ]
@@ -91,7 +91,7 @@
       ],
       "files": [
         {
-          "path": "registry/looply/error-recovery.tsx",
+          "path": "registry/nodeloop/error-recovery.tsx",
           "type": "registry:ui"
         }
       ]
@@ -106,7 +106,7 @@
       ],
       "files": [
         {
-          "path": "registry/looply/human-handoff.tsx",
+          "path": "registry/nodeloop/human-handoff.tsx",
           "type": "registry:ui"
         }
       ]
@@ -121,7 +121,7 @@
       ],
       "files": [
         {
-          "path": "registry/looply/multi-agent-status.tsx",
+          "path": "registry/nodeloop/multi-agent-status.tsx",
           "type": "registry:ui"
         }
       ]
@@ -137,7 +137,7 @@
       ],
       "files": [
         {
-          "path": "registry/looply/plan-preview.tsx",
+          "path": "registry/nodeloop/plan-preview.tsx",
           "type": "registry:ui"
         }
       ]
@@ -153,7 +153,7 @@
       ],
       "files": [
         {
-          "path": "registry/looply/prompt-composer.tsx",
+          "path": "registry/nodeloop/prompt-composer.tsx",
           "type": "registry:ui"
         }
       ]
@@ -168,7 +168,7 @@
       ],
       "files": [
         {
-          "path": "registry/looply/streaming-response.tsx",
+          "path": "registry/nodeloop/streaming-response.tsx",
           "type": "registry:ui"
         }
       ]
@@ -183,7 +183,7 @@
       ],
       "files": [
         {
-          "path": "registry/looply/tool-permissions.tsx",
+          "path": "registry/nodeloop/tool-permissions.tsx",
           "type": "registry:ui"
         }
       ]
@@ -199,7 +199,7 @@
       ],
       "files": [
         {
-          "path": "registry/looply/tool-timeline.tsx",
+          "path": "registry/nodeloop/tool-timeline.tsx",
           "type": "registry:ui"
         }
       ]
@@ -208,15 +208,15 @@
       "name": "theme-brand",
       "type": "registry:ui",
       "title": "Brand theme",
-      "description": "Give one hex colour and every Looply component follows it, in light and dark, with contrast checked.",
+      "description": "Give one hex colour and every Nodeloop component follows it, in light and dark, with contrast checked.",
       "dependencies": [],
       "files": [
         {
-          "path": "registry/looply/looply-theme-derive.ts",
+          "path": "registry/nodeloop/nodeloop-theme-derive.ts",
           "type": "registry:lib"
         },
         {
-          "path": "registry/looply/looply-theme.tsx",
+          "path": "registry/nodeloop/nodeloop-theme.tsx",
           "type": "registry:ui"
         }
       ]

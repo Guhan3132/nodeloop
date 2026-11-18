@@ -4,7 +4,7 @@ import Link from "next/link";
 import { Logo } from "@/components/Logo";
 import { usePathname } from "next/navigation";
 
-const repo = "https://github.com/Guhan3132/looply";
+const repo = "https://github.com/Guhan3132/nodeloop";
 
 const columns = [
   {
@@ -46,7 +46,7 @@ export function Footer() {
         <div>
           <Link href="/" className="flex items-center gap-2 text-[15px] font-semibold tracking-tight">
             <Logo size={24} />
-            Looply
+            Nodeloop
           </Link>
           <p className="mt-3 max-w-xs text-sm leading-relaxed text-muted-foreground">
             Open-source UX patterns for AI agents. Click them, break them, copy them.

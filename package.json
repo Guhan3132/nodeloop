@@ -1,6 +1,6 @@
 {
-  "name": "looply",
-  "version": "0.8.0",
+  "name": "nodeloop",
+  "version": "0.9.0",
   "private": true,
   "description": "Live, copyable UX patterns for AI agents: React components you can feel before you build them.",
   "keywords": [
@@ -15,13 +15,13 @@
     "chat",
     "llm"
   ],
-  "homepage": "https://looply-ui.vercel.app",
+  "homepage": "https://nodeloop.vercel.app",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Guhan3132/looply.git"
+    "url": "git+https://github.com/Guhan3132/nodeloop.git"
   },
   "bugs": {
-    "url": "https://github.com/Guhan3132/looply/issues"
+    "url": "https://github.com/Guhan3132/nodeloop/issues"
   },
   "license": "MIT",
   "author": "Guhan3132",

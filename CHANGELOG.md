@@ -1,5 +1,15 @@
 # Changelog
 
+## 0.9.0 (2026-11-18)
+
+Looply is now Nodeloop: the logo is a node in a loop, and the Looply name was already used elsewhere.
+
+- Site: https://nodeloop.vercel.app. The old addresses, looply-ui.vercel.app and agentic-component.vercel.app, keep serving the same site and registry, so install commands you already copied keep working
+- Repo: github.com/Guhan3132/nodeloop. The old Looply and Agentic-Component URLs redirect there
+- `LooplyTheme` is now `NodeloopTheme`, installed as `components/ui/nodeloop-theme.tsx` and `lib/nodeloop-theme-derive.ts`. `LooplyTheme` and `AgenticTheme` still work as aliases. The wrapper's attribute is now `data-nodeloop-theme`
+- Registry name `nodeloop`, source paths `registry/nodeloop/`, and the DTCG extension key `dev.nodeloop`
+- The site moves saved settings from the `looply:` and `agentic-ui:` keys to `nodeloop:` on your next visit
+
 ## 0.8.0 (2026-11-18)
 
 - Loop Blue is the default primary colour everywhere: `primary` and `ring` are #2563eb (`oklch(0.5461 0.2152 262.88)`) in light and dark, with white button text at 5.17:1. Installing a pattern adds these only if your project has no `--primary` yet, so an existing theme is never changed. For the old neutral look, install `theme-graphite`

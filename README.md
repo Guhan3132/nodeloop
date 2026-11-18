@@ -1,10 +1,10 @@
-# Looply
+# Nodeloop
 
-_Formerly Agentic UI._
+_Formerly Looply, and before that Agentic UI._
 
 React components for the screens of an AI agent: streaming, trust, approval, planning, chat and input. Every pattern runs as a **live, scripted simulation**, so you can click it, break it and copy it, with no API key.
 
-**Live demo: [looply-ui.vercel.app](https://looply-ui.vercel.app)**
+**Live demo: [nodeloop.vercel.app](https://nodeloop.vercel.app)**
 
 It is meant to show how a good agent interface behaves, not only how it looks. Each pattern ships with its scenarios (for example "fails mid-stream" or "destructive action"), the reasoning behind it, do and don't lists, props, accessibility notes and the source.
 
@@ -41,8 +41,8 @@ The **Playground** (`/playground`) puts them together in one full-screen chat: p
 ## Quick start
 
 ```bash
-git clone https://github.com/Guhan3132/looply.git
-cd looply
+git clone https://github.com/Guhan3132/nodeloop.git
+cd nodeloop
 npm install
 npm run dev
 ```
@@ -67,19 +67,19 @@ Each component is a single file that depends only on React, [`lucide-react`](htt
 
 **Requirements:** Tailwind CSS v4, TypeScript, and the shadcn theme tokens (`background`, `foreground`, `card`, `muted`, `muted-foreground`, `accent`, `border`, `input`, `ring`, `primary`, `primary-foreground`) with a `.dark` class for dark mode. Put `cn` in `@/lib/utils`.
 
-**New here? See [Get started](https://looply-ui.vercel.app/get-started).**
+**New here? See [Get started](https://nodeloop.vercel.app/get-started).**
 
 **With the shadcn CLI** (every pattern is served from the live site):
 
 ```bash
-npx shadcn@latest add "https://looply-ui.vercel.app/r/approval-step.json"
+npx shadcn@latest add "https://nodeloop.vercel.app/r/approval-step.json"
 ```
 
 **Or by hand:** open a pattern page, use **Copy code** or **Copy prompt**, and paste it into `components/ui/`.
 
 ## Connect a real model
 
-The site's demos are scripted. [examples/ai-sdk](./examples/ai-sdk) wires Streaming response, Tool-call timeline and Approval step to a real model with the Vercel AI SDK (tools that run on their own, and one that waits for approval). It is type-checked in CI, and shown on the [Get started](https://looply-ui.vercel.app/get-started#real-model) page.
+The site's demos are scripted. [examples/ai-sdk](./examples/ai-sdk) wires Streaming response, Tool-call timeline and Approval step to a real model with the Vercel AI SDK (tools that run on their own, and one that waits for approval). It is type-checked in CI, and shown on the [Get started](https://nodeloop.vercel.app/get-started#real-model) page.
 
 ## Brand colour and theming
 
@@ -87,17 +87,17 @@ Every component reads shadcn-style colour tokens, so one brand colour restyles a
 
 ```bash
 # a preset (10 samples: blue, graphite, violet, indigo, teal, green, amber, orange, pink, navy)
-npx shadcn@latest add "https://looply-ui.vercel.app/r/theme-violet.json"
+npx shadcn@latest add "https://nodeloop.vercel.app/r/theme-violet.json"
 
 # or your own hex, with a wrapper
-npx shadcn@latest add "https://looply-ui.vercel.app/r/theme-brand.json"
+npx shadcn@latest add "https://nodeloop.vercel.app/r/theme-brand.json"
 ```
 
 ```tsx
-<LooplyTheme brand="#7c3aed">{children}</LooplyTheme>
+<NodeloopTheme brand="#7c3aed">{children}</NodeloopTheme>
 ```
 
-Contrast is checked for you, and status colours (success, warning, danger) never follow the brand. See [Tokens and theming](https://looply-ui.vercel.app/tokens) and [Customising components](https://looply-ui.vercel.app/customize) for radius, fonts, spacing, icons and motion.
+Contrast is checked for you, and status colours (success, warning, danger) never follow the brand. See [Tokens and theming](https://nodeloop.vercel.app/tokens) and [Customising components](https://nodeloop.vercel.app/customize) for radius, fonts, spacing, icons and motion.
 
 ## Project structure
 

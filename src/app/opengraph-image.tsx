@@ -1,7 +1,7 @@
 import { ImageResponse } from "next/og";
 import { LogoOg } from "@/components/Logo";
 
-export const alt = "Looply: UX patterns for AI agents";
+export const alt = "Nodeloop: UX patterns for AI agents";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -22,7 +22,7 @@ export default function OpengraphImage() {
       >
         <div style={{ display: "flex", alignItems: "center", gap: 20 }}>
           <LogoOg size={52} color="#18181b" />
-          <div style={{ fontSize: 46, fontWeight: 600, letterSpacing: -1.5 }}>looply</div>
+          <div style={{ fontSize: 46, fontWeight: 600, letterSpacing: -1.5 }}>nodeloop</div>
         </div>
         <div style={{ marginTop: 48, fontSize: 84, fontWeight: 700, lineHeight: 1.05, letterSpacing: -2 }}>
           UX patterns for AI agents you can feel.
