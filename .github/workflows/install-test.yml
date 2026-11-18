@@ -25,8 +25,8 @@ jobs:
       - name: Add every pattern from the live registry
         working-directory: consumer
         run: |
-          for s in $(curl -fsS https://agentic-component.vercel.app/r/registry.json | node -e 'let d="";process.stdin.on("data",c=>d+=c).on("end",()=>console.log(JSON.parse(d).items.map(i=>i.name).join(" ")))'); do
-            npx --yes shadcn@latest add "https://agentic-component.vercel.app/r/$s.json" -y -o
+          for s in $(curl -fsS https://looply-ui.vercel.app/r/registry.json | node -e 'let d="";process.stdin.on("data",c=>d+=c).on("end",()=>console.log(JSON.parse(d).items.map(i=>i.name).join(" ")))'); do
+            npx --yes shadcn@latest add "https://looply-ui.vercel.app/r/$s.json" -y -o
           done
       - name: Type-check
         working-directory: consumer

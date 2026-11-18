@@ -152,7 +152,7 @@ export default function Customize() {
             <li>Contrast of at least 4.5:1 for text and 3:1 for focus rings and controls</li>
           </ul>
           <p>
-            Ran into something that is hard to change? <a className="text-foreground underline" href="https://github.com/Guhan3132/Agentic-Component/issues/new/choose" target="_blank" rel="noreferrer">Open an issue</a>.
+            Ran into something that is hard to change? <a className="text-foreground underline" href="https://github.com/Guhan3132/looply/issues/new/choose" target="_blank" rel="noreferrer">Open an issue</a>.
           </p>
         </Section>
       </div>

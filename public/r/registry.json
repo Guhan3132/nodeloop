@@ -1,7 +1,7 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry.json",
   "name": "looply",
-  "homepage": "https://agentic-component.vercel.app",
+  "homepage": "https://looply-ui.vercel.app",
   "items": [
     {
       "name": "agent-memory",

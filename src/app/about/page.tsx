@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   alternates: { canonical: "/about" },
 };
 
-const repo = "https://github.com/Guhan3132/Agentic-Component";
+const repo = "https://github.com/Guhan3132/looply";
 
 const compare = [
   ["Focus", "General UI components", "Agent-specific UX patterns"],

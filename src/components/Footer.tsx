@@ -4,7 +4,7 @@ import Link from "next/link";
 import { Logo } from "@/components/Logo";
 import { usePathname } from "next/navigation";
 
-const repo = "https://github.com/Guhan3132/Agentic-Component";
+const repo = "https://github.com/Guhan3132/looply";
 
 const columns = [
   {

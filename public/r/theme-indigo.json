@@ -4,7 +4,7 @@
   "type": "registry:theme",
   "title": "Indigo theme",
   "description": "Sets the brand colour to Indigo (#4f46e5) for light and dark, with contrast checked.",
-  "author": "Looply <https://agentic-component.vercel.app>",
+  "author": "Looply <https://looply-ui.vercel.app>",
   "categories": [
     "theme"
   ],

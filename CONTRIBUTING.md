@@ -5,8 +5,8 @@ Thanks for helping. Patterns, fixes and docs are all welcome.
 ## Setup
 
 ```bash
-git clone https://github.com/Guhan3132/Agentic-Component.git
-cd Agentic-Component
+git clone https://github.com/Guhan3132/looply.git
+cd looply
 npm install
 npm run dev
 ```
@@ -48,7 +48,7 @@ By contributing you agree that your work is released under the [MIT License](./L
 ## Releasing
 
 1. Move the "Unreleased" changelog entries under a new dated version, and bump `version` in `package.json`.
-2. Run `npm run registry:build`, then `npm run registry:release`. It freezes `public/r/v<version>/`, so people can pin `https://agentic-component.vercel.app/r/v<version>/<name>.json`. It refuses to overwrite an existing release.
+2. Run `npm run registry:build`, then `npm run registry:release`. It freezes `public/r/v<version>/`, so people can pin `https://looply-ui.vercel.app/r/v<version>/<name>.json`. It refuses to overwrite an existing release.
 3. Commit, push, tag `v<version>` and publish a GitHub release with the changelog notes.
 
 CI fails if a component changes after its version was frozen, which is the reminder to bump the version.

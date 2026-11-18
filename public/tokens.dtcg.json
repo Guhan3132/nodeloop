@@ -1,5 +1,5 @@
 {
-  "$description": "Looply colour tokens. Light values in $value, dark in $extensions[\"dev.looply\"].dark. https://agentic-component.vercel.app/tokens",
+  "$description": "Looply colour tokens. Light values in $value, dark in $extensions[\"dev.looply\"].dark. https://looply-ui.vercel.app/tokens",
   "color": {
     "background": {
       "$type": "color",
@@ -83,31 +83,31 @@
     },
     "primary": {
       "$type": "color",
-      "$value": "oklch(0.205 0 0)",
-      "$description": "Brand: Main buttons, the selected tab, progress bars",
+      "$value": "oklch(0.5461 0.2152 262.88)",
+      "$description": "Brand: Main buttons, the selected tab, progress bars. Loop Blue, #2563eb",
       "$extensions": {
         "dev.looply": {
-          "dark": "oklch(0.922 0 0)"
+          "dark": "oklch(0.5461 0.2152 262.88)"
         }
       }
     },
     "primary-foreground": {
       "$type": "color",
-      "$value": "oklch(0.985 0 0)",
-      "$description": "Brand: Text and icons on primary",
+      "$value": "oklch(1 0 0)",
+      "$description": "Brand: Text and icons on primary. White passes AA (5.17:1)",
       "$extensions": {
         "dev.looply": {
-          "dark": "oklch(0.205 0 0)"
+          "dark": "oklch(1 0 0)"
         }
       }
     },
     "ring": {
       "$type": "color",
-      "$value": "oklch(0.55 0 0)",
+      "$value": "oklch(0.5461 0.2152 262.88)",
       "$description": "Brand: Keyboard focus outline. Passes 3:1 on card",
       "$extensions": {
         "dev.looply": {
-          "dark": "oklch(0.556 0 0)"
+          "dark": "oklch(0.5461 0.2152 262.88)"
         }
       }
     },

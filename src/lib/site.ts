@@ -2,11 +2,11 @@
  * Where the site lives. Set NEXT_PUBLIC_SITE_URL to move to a custom domain: every page, the sitemap,
  * the social images and the registry files read it from here. No trailing slash.
  */
-export const SITE_URL = (process.env.NEXT_PUBLIC_SITE_URL ?? "https://agentic-component.vercel.app").replace(/\/$/, "");
+export const SITE_URL = (process.env.NEXT_PUBLIC_SITE_URL ?? "https://looply-ui.vercel.app").replace(/\/$/, "");
 
 export const SITE_HOST = new URL(SITE_URL).host;
 
-export const REPO_URL = "https://github.com/Guhan3132/Agentic-Component";
+export const REPO_URL = "https://github.com/Guhan3132/looply";
 
 /** Release dates, so the sitemap reports when a page really changed instead of the build time. */
 export const RELEASES: Record<string, string> = {
@@ -17,4 +17,5 @@ export const RELEASES: Record<string, string> = {
   "0.5.0": "2026-11-03",
   "0.6.0": "2026-11-18",
   "0.7.0": "2026-11-18",
+  "0.8.0": "2026-11-18",
 };

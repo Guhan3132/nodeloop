@@ -1,6 +1,6 @@
 {
   "name": "looply",
-  "version": "0.7.0",
+  "version": "0.8.0",
   "private": true,
   "description": "Live, copyable UX patterns for AI agents: React components you can feel before you build them.",
   "keywords": [
@@ -15,13 +15,13 @@
     "chat",
     "llm"
   ],
-  "homepage": "https://agentic-component.vercel.app",
+  "homepage": "https://looply-ui.vercel.app",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Guhan3132/Agentic-Component.git"
+    "url": "git+https://github.com/Guhan3132/looply.git"
   },
   "bugs": {
-    "url": "https://github.com/Guhan3132/Agentic-Component/issues"
+    "url": "https://github.com/Guhan3132/looply/issues"
   },
   "license": "MIT",
   "author": "Guhan3132",

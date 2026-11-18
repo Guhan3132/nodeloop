@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.8.0 (2026-11-18)
+
+- Loop Blue is the default primary colour everywhere: `primary` and `ring` are #2563eb (`oklch(0.5461 0.2152 262.88)`) in light and dark, with white button text at 5.17:1. Installing a pattern adds these only if your project has no `--primary` yet, so an existing theme is never changed. For the old neutral look, install `theme-graphite`
+- The favicon is the bare loop with no tile: ink on a light browser tab, white on a dark one. The Apple touch icon keeps its white square, because iOS needs one
+- The GitHub repo is now github.com/Guhan3132/looply. The old Agentic-Component URL redirects there
+- The site moves to https://looply-ui.vercel.app, and install URLs use it. https://agentic-component.vercel.app keeps serving the same site and registry, so install commands you already copied keep working
+
 ## 0.7.0 (2026-11-18)
 
 Finishes the rename from Agentic UI to Looply.

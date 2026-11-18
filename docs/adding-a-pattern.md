@@ -1,6 +1,6 @@
 # Adding a pattern
 
-A pattern is one component that shows how an agent should behave on screen in one situation, plus a live demo that can fail on purpose. Read [CONTRIBUTING.md](../CONTRIBUTING.md) first. If you are not sure whether an idea fits, open a [pattern request](https://github.com/Guhan3132/Agentic-Component/issues/new/choose) and we will talk it through before you build.
+A pattern is one component that shows how an agent should behave on screen in one situation, plus a live demo that can fail on purpose. Read [CONTRIBUTING.md](../CONTRIBUTING.md) first. If you are not sure whether an idea fits, open a [pattern request](https://github.com/Guhan3132/looply/issues/new/choose) and we will talk it through before you build.
 
 ## What makes a good pattern
 

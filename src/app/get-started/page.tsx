@@ -83,7 +83,7 @@ export default function GetStarted() {
           <CodeBlock code={`npx shadcn@latest add "${origin}/r/v${LATEST_RELEASE}/approval-step.json"`} file="terminal" />
           <p>
             Check any file against <a className="text-foreground underline" href="/r/checksums.txt">the published checksums</a>. Releases are listed on{" "}
-            <a className="text-foreground underline" href="https://github.com/Guhan3132/Agentic-Component/releases" target="_blank" rel="noreferrer">
+            <a className="text-foreground underline" href="https://github.com/Guhan3132/looply/releases" target="_blank" rel="noreferrer">
               GitHub
             </a>
             .

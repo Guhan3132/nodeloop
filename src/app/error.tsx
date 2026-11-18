@@ -31,7 +31,7 @@ export default function Error({ error, reset }: { error: Error & { digest?: stri
           Go to the home page
         </Link>
         <a
-          href="https://github.com/Guhan3132/Agentic-Component/issues/new/choose"
+          href="https://github.com/Guhan3132/looply/issues/new/choose"
           target="_blank"
           rel="noreferrer"
           className="rounded-lg px-5 py-3 text-sm font-medium text-muted-foreground hover:bg-muted hover:text-foreground sm:py-2.5"
