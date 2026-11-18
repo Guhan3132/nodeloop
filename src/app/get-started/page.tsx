@@ -74,6 +74,13 @@ export default function GetStarted() {
             <code className="text-foreground">components/ui</code> folder and installs <code className="text-foreground">lucide-react</code> and{" "}
             <code className="text-foreground">motion</code> if the pattern needs them.
           </p>
+          <p>
+            Want a shorter command? Add Nodeloop once to the <code className="text-foreground">registries</code> block of your{" "}
+            <code className="text-foreground">components.json</code>:
+          </p>
+          <CodeBlock code={`"registries": {\n  "@nodeloop": "${origin}/r/{name}.json"\n}`} file="components.json" />
+          <p>Then install any pattern or theme by name:</p>
+          <CodeBlock code={`npx shadcn@latest add @nodeloop/approval-step`} file="terminal" />
         </Step>
 
         <Step n={3} title="Pin a version (optional)">

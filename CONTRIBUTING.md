@@ -51,4 +51,8 @@ By contributing you agree that your work is released under the [MIT License](./L
 2. Run `npm run registry:build`, then `npm run registry:release`. It freezes `public/r/v<version>/`, so people can pin `https://nodeloop.vercel.app/r/v<version>/<name>.json`. It refuses to overwrite an existing release.
 3. Commit, push, tag `v<version>` and publish a GitHub release with the changelog notes.
 
+### shadcn directory
+
+[`docs/shadcn-directory-entry.json`](./docs/shadcn-directory-entry.json) is the entry for the shadcn registry directory (`@nodeloop`). Keep its `url` in step with the site address. To list or update the registry, open a pull request that adds that entry to the directory's `registries.json` in the shadcn-ui/ui repository.
+
 CI fails if a component changes after its version was frozen, which is the reminder to bump the version.

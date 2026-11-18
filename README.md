@@ -75,6 +75,26 @@ Each component is a single file that depends only on React, [`lucide-react`](htt
 npx shadcn@latest add "https://nodeloop.vercel.app/r/approval-step.json"
 ```
 
+**Shorter command.** Add Nodeloop once to `components.json`:
+
+```json
+"registries": {
+  "@nodeloop": "https://nodeloop.vercel.app/r/{name}.json"
+}
+```
+
+Then install by name:
+
+```bash
+npx shadcn@latest add @nodeloop/approval-step
+```
+
+**Pin a release.** Every release is frozen, so a pinned URL never changes. Use `/r/v<version>/<name>.json`, for example:
+
+```bash
+npx shadcn@latest add "https://nodeloop.vercel.app/r/v0.9.0/approval-step.json"
+```
+
 **Or by hand:** open a pattern page, use **Copy code** or **Copy prompt**, and paste it into `components/ui/`.
 
 ## Connect a real model
