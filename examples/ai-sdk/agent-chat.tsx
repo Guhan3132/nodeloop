@@ -1,6 +1,6 @@
 "use client";
 
-// A chat screen wired to a real model with the Vercel AI SDK, using three Agentic UI patterns:
+// A chat screen wired to a real model with the Vercel AI SDK, using three Looply patterns:
 //   StreamingResponse for the text (with an activity line while tools run),
 //   ToolTimeline for what the agent did, and ApprovalStep for the tool that needs a yes.
 // Install the patterns first:  npx shadcn@latest add <site>/r/streaming-response.json (and tool-timeline, approval-step)

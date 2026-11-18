@@ -361,7 +361,7 @@ export function BrandSwitcher() {
               Copy CSS
             </Btn>
             <Btn
-              onClick={() => theme && copy("code", `<AgenticTheme brand="${theme.brand}"${brand.white ? ' textColor="white"' : ""}${brand.tint ? " tintNeutrals" : ""}>\n  {/* your components */}\n</AgenticTheme>`)}
+              onClick={() => theme && copy("code", `<LooplyTheme brand="${theme.brand}"${brand.white ? ' textColor="white"' : ""}${brand.tint ? " tintNeutrals" : ""}>\n  {/* your components */}\n</LooplyTheme>`)}
               done={copied === "code"}
               disabled={!theme}
             >

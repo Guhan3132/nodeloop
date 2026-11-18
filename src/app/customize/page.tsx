@@ -126,7 +126,7 @@ export default function Customize() {
           <p>
             Components follow a <code>.dark</code> class on any ancestor, the shadcn convention. Put it on <code>&lt;html&gt;</code> for the whole app, or on
             one container to preview a single section. Dark values come from the same tokens, including a brand colour set with{" "}
-            <code>AgenticTheme</code>.
+            <code>LooplyTheme</code>.
           </p>
         </Section>
 

@@ -1,5 +1,16 @@
 # Changelog
 
+## 0.7.0 (2026-11-18)
+
+Finishes the rename from Agentic UI to Looply.
+
+- `AgenticTheme` is now `LooplyTheme`, and the brand helper installs as `components/ui/looply-theme.tsx` and `lib/looply-theme-derive.ts`. `AgenticTheme` still works as an alias. Files you installed before keep working; delete the old `agentic-theme` files if you reinstall `theme-brand`
+- The wrapper's attribute is now `data-looply-theme` (was `data-agentic-theme`). Update any CSS that targets it
+- Registry name `looply`, and the DTCG export's extension key is now `dev.looply` (was `dev.agentic-ui`)
+- The site stores settings under `looply:` and moves your saved theme, brand colour and saved patterns over from the old `agentic-ui:` keys on your next visit
+- Package name, README, contributing guide, examples and docs use the new name. Install URLs, the GitHub repo and the site address are unchanged
+- Next.js 16.4.6 (was 16.4.3), which fixes two `use cache` advisories (GHSA-mfr8-8qww-v76h, GHSA-vc7v-qv4w-wrv8). The site does not use `use cache`, so it was not exposed
+
 ## 0.6.0 (2026-11-18)
 
 - New name and identity: Agentic UI is now Looply. The logo is an open loop with the agent node in its gap, with no background in the UI; the white tile is kept for the favicon and app icon. Social images use the new mark

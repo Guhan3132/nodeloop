@@ -4,11 +4,12 @@ import { Bookmark, Check, Sparkles } from "lucide-react";
 import { useState, useSyncExternalStore } from "react";
 import { cn } from "@/lib/cn";
 import { buildRemixPrompt } from "@/lib/prompts";
+import { SAVED_KEY } from "@/lib/head-scripts";
 import { track } from "@/lib/track";
 
-const KEY = "agentic-ui:saved";
+const KEY = SAVED_KEY;
 
-const EVENT = "agentic-ui:saved-change";
+const EVENT = "looply:saved-change";
 let memory: string[] = [];
 
 const read = (): string[] => {

@@ -1,6 +1,6 @@
 import { render } from "@testing-library/react";
 import { describe, expect, it } from "vitest";
-import { AgenticTheme, contrast, deriveTheme, parseColor, parseHex, themeCss, toHex, wcagLevel } from "@/theme/agentic-theme";
+import { AgenticTheme, LooplyTheme, contrast, deriveTheme, parseColor, parseHex, themeCss, toHex, wcagLevel } from "@/theme/looply-theme";
 import { sampleThemes } from "@/theme/samples";
 
 const DARK_CARD = parseHex("#171717")!;
@@ -140,7 +140,7 @@ describe("options and report", () => {
   });
 });
 
-describe("themeCss and AgenticTheme", () => {
+describe("themeCss and LooplyTheme", () => {
   it("writes a light and a dark block", () => {
     const css = themeCss(deriveTheme("#7c3aed")!);
     expect(css).toContain(":root { --primary:oklch(");
@@ -149,24 +149,28 @@ describe("themeCss and AgenticTheme", () => {
 
   it("scopes the variables to its own subtree and follows .dark", () => {
     const { container } = render(
-      <AgenticTheme brand="#7c3aed">
+      <LooplyTheme brand="#7c3aed">
         <span>inside</span>
-      </AgenticTheme>,
+      </LooplyTheme>,
     );
-    const wrapper = container.querySelector("[data-agentic-theme]")!;
+    const wrapper = container.querySelector("[data-looply-theme]")!;
     const css = container.querySelector("style")!.textContent!;
-    expect(css).toContain(`[data-agentic-theme="${wrapper.getAttribute("data-agentic-theme")}"]`);
-    expect(css).toContain(".dark [data-agentic-theme");
+    expect(css).toContain(`[data-looply-theme="${wrapper.getAttribute("data-looply-theme")}"]`);
+    expect(css).toContain(".dark [data-looply-theme");
     expect(wrapper).toHaveTextContent("inside");
   });
 
   it("changes nothing for an invalid colour", () => {
     const { container } = render(
-      <AgenticTheme brand="not a colour">
+      <LooplyTheme brand="not a colour">
         <span>inside</span>
-      </AgenticTheme>,
+      </LooplyTheme>,
     );
     expect(container.querySelector("style")).toBeNull();
     expect(container).toHaveTextContent("inside");
+  });
+
+  it("keeps AgenticTheme as an alias, so code written before 0.7.0 still works", () => {
+    expect(AgenticTheme).toBe(LooplyTheme);
   });
 });

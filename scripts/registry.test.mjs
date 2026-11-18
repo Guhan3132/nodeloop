@@ -108,9 +108,9 @@ test("theme-brand ships the wrapper and its maths, wired to each other", () => {
   const item = JSON.parse(read("public/r/theme-brand.json"));
   assert.deepEqual(item.files.map((f) => f.type), ["registry:lib", "registry:ui"]);
   const [lib, ui] = item.files;
-  assert.match(lib.path, /agentic-theme-derive\.ts$/);
+  assert.match(lib.path, /looply-theme-derive\.ts$/);
   assert.ok(lib.content.includes("export function deriveTheme"), "derive maths");
-  assert.ok(ui.content.includes('from "@/lib/agentic-theme-derive"'), "wrapper imports the lib by its installed path");
+  assert.ok(ui.content.includes('from "@/lib/looply-theme-derive"'), "wrapper imports the lib by its installed path");
   assert.ok(!ui.content.includes('"./derive"'), "no relative import left behind");
   assert.ok(!lib.content.includes("\r") && !ui.content.includes("\r"), "LF only");
 });

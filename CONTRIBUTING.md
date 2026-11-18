@@ -1,4 +1,4 @@
-# Contributing to Agentic UI
+# Contributing to Looply
 
 Thanks for helping. Patterns, fixes and docs are all welcome.
 

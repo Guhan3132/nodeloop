@@ -1,4 +1,6 @@
-# Agentic UI
+# Looply
+
+_Formerly Agentic UI._
 
 React components for the screens of an AI agent: streaming, trust, approval, planning, chat and input. Every pattern runs as a **live, scripted simulation**, so you can click it, break it and copy it, with no API key.
 
@@ -84,7 +86,7 @@ The site's demos are scripted. [examples/ai-sdk](./examples/ai-sdk) wires Stream
 Every component reads shadcn-style colour tokens, so one brand colour restyles all of them in light and dark. Try it with the **Brand** button on the site, then:
 
 ```bash
-# a preset (10 samples: graphite, violet, indigo, blue, teal, green, amber, orange, pink, navy)
+# a preset (10 samples: blue, graphite, violet, indigo, teal, green, amber, orange, pink, navy)
 npx shadcn@latest add "https://agentic-component.vercel.app/r/theme-violet.json"
 
 # or your own hex, with a wrapper
@@ -92,7 +94,7 @@ npx shadcn@latest add "https://agentic-component.vercel.app/r/theme-brand.json"
 ```
 
 ```tsx
-<AgenticTheme brand="#7c3aed">{children}</AgenticTheme>
+<LooplyTheme brand="#7c3aed">{children}</LooplyTheme>
 ```
 
 Contrast is checked for you, and status colours (success, warning, danger) never follow the brand. See [Tokens and theming](https://agentic-component.vercel.app/tokens) and [Customising components](https://agentic-component.vercel.app/customize) for radius, fonts, spacing, icons and motion.

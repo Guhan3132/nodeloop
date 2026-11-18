@@ -1,12 +1,12 @@
 {
-  "$description": "Looply colour tokens. Light values in $value, dark in $extensions[\"dev.agentic-ui\"].dark. https://agentic-component.vercel.app/tokens",
+  "$description": "Looply colour tokens. Light values in $value, dark in $extensions[\"dev.looply\"].dark. https://agentic-component.vercel.app/tokens",
   "color": {
     "background": {
       "$type": "color",
       "$value": "oklch(1 0 0)",
       "$description": "Surface: Page and preview background",
       "$extensions": {
-        "dev.agentic-ui": {
+        "dev.looply": {
           "dark": "oklch(0.145 0 0)"
         }
       }
@@ -16,7 +16,7 @@
       "$value": "oklch(0.145 0 0)",
       "$description": "Surface: Main text",
       "$extensions": {
-        "dev.agentic-ui": {
+        "dev.looply": {
           "dark": "oklch(0.985 0 0)"
         }
       }
@@ -26,7 +26,7 @@
       "$value": "oklch(1 0 0)",
       "$description": "Surface: Cards, panels and popovers. Always opaque",
       "$extensions": {
-        "dev.agentic-ui": {
+        "dev.looply": {
           "dark": "oklch(0.205 0 0)"
         }
       }
@@ -36,7 +36,7 @@
       "$value": "oklch(0.97 0 0)",
       "$description": "Surface: Quiet fills: inputs, chips, hover on lists",
       "$extensions": {
-        "dev.agentic-ui": {
+        "dev.looply": {
           "dark": "oklch(0.269 0 0)"
         }
       }
@@ -46,7 +46,7 @@
       "$value": "oklch(0.53 0 0)",
       "$description": "Surface: Secondary text and icons. Passes AA on card and muted",
       "$extensions": {
-        "dev.agentic-ui": {
+        "dev.looply": {
           "dark": "oklch(0.708 0 0)"
         }
       }
@@ -56,7 +56,7 @@
       "$value": "oklch(0.97 0 0)",
       "$description": "Surface: Hover and selected fills",
       "$extensions": {
-        "dev.agentic-ui": {
+        "dev.looply": {
           "dark": "oklch(0.269 0 0)"
         }
       }
@@ -66,7 +66,7 @@
       "$value": "oklch(0.922 0 0)",
       "$description": "Surface: Dividers and outlines",
       "$extensions": {
-        "dev.agentic-ui": {
+        "dev.looply": {
           "dark": "oklch(1 0 0 / 10%)"
         }
       }
@@ -76,7 +76,7 @@
       "$value": "oklch(0.922 0 0)",
       "$description": "Surface: Form control borders",
       "$extensions": {
-        "dev.agentic-ui": {
+        "dev.looply": {
           "dark": "oklch(1 0 0 / 15%)"
         }
       }
@@ -86,7 +86,7 @@
       "$value": "oklch(0.205 0 0)",
       "$description": "Brand: Main buttons, the selected tab, progress bars",
       "$extensions": {
-        "dev.agentic-ui": {
+        "dev.looply": {
           "dark": "oklch(0.922 0 0)"
         }
       }
@@ -96,7 +96,7 @@
       "$value": "oklch(0.985 0 0)",
       "$description": "Brand: Text and icons on primary",
       "$extensions": {
-        "dev.agentic-ui": {
+        "dev.looply": {
           "dark": "oklch(0.205 0 0)"
         }
       }
@@ -106,7 +106,7 @@
       "$value": "oklch(0.55 0 0)",
       "$description": "Brand: Keyboard focus outline. Passes 3:1 on card",
       "$extensions": {
-        "dev.agentic-ui": {
+        "dev.looply": {
           "dark": "oklch(0.556 0 0)"
         }
       }
@@ -116,7 +116,7 @@
       "$value": "oklch(0.5081 0.1049 165.61)",
       "$description": "Status: Done, approved, allowed. Never the brand colour",
       "$extensions": {
-        "dev.agentic-ui": {
+        "dev.looply": {
           "dark": "oklch(0.8452 0.1299 164.98)"
         }
       }
@@ -126,7 +126,7 @@
       "$value": "oklch(0.5305 0.145 47.78)",
       "$description": "Status: Needs review, waiting, retrying. Never the brand colour",
       "$extensions": {
-        "dev.agentic-ui": {
+        "dev.looply": {
           "dark": "oklch(0.879 0.1534 91.61)"
         }
       }
@@ -136,7 +136,7 @@
       "$value": "oklch(0.5143 0.1978 16.93)",
       "$description": "Status: Failed, blocked, hard to undo. Follows shadcn's --destructive when your project has it",
       "$extensions": {
-        "dev.agentic-ui": {
+        "dev.looply": {
           "dark": "oklch(0.8097 0.1061 11.64)"
         }
       }

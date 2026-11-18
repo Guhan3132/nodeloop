@@ -46,11 +46,11 @@ writeFileSync(
   join(root, "public/tokens.dtcg.json"),
   `${JSON.stringify(
     {
-      $description: `Looply colour tokens. Light values in $value, dark in $extensions["dev.agentic-ui"].dark. ${SITE_URL}/tokens`,
+      $description: `Looply colour tokens. Light values in $value, dark in $extensions["dev.looply"].dark. ${SITE_URL}/tokens`,
       color: Object.fromEntries(
         tokenList.map((t) => [
           t.name,
-          { $type: "color", $value: plain(t.light), $description: `${t.group}: ${t.role}`, $extensions: { "dev.agentic-ui": { dark: plain(t.dark) } } },
+          { $type: "color", $value: plain(t.light), $description: `${t.group}: ${t.role}`, $extensions: { "dev.looply": { dark: plain(t.dark) } } },
         ]),
       ),
     },
@@ -92,7 +92,7 @@ for (const slug of slugs) {
     dependencies,
     registryDependencies: [],
     cssVars,
-    files: [{ path: `registry/agentic-ui/${slug}.tsx`, type: "registry:ui", content }],
+    files: [{ path: `registry/looply/${slug}.tsx`, type: "registry:ui", content }],
     docs: [
       `Preview and docs: ${SITE_URL}/components/${slug}`,
       "Uses the shadcn theme tokens (missing ones are added, yours are never changed) and cn in @/lib/utils.",
@@ -111,7 +111,7 @@ const { sampleThemes } = await import(pathToFileURL(join(root, "src/theme/sample
 const norm = (t) => t.replaceAll("\r\n", "\n");
 
 const deriveSrc = norm(readFileSync(join(root, "src/theme/derive.ts"), "utf8"));
-const themeSrc = norm(readFileSync(join(root, "src/theme/agentic-theme.tsx"), "utf8")).replaceAll('"./derive"', '"@/lib/agentic-theme-derive"');
+const themeSrc = norm(readFileSync(join(root, "src/theme/looply-theme.tsx"), "utf8")).replaceAll('"./derive"', '"@/lib/looply-theme-derive"');
 const brandItem = {
   $schema: "https://ui.shadcn.com/schema/registry-item.json",
   name: "theme-brand",
@@ -123,11 +123,11 @@ const brandItem = {
   dependencies: [],
   registryDependencies: [],
   files: [
-    { path: "registry/agentic-ui/agentic-theme-derive.ts", type: "registry:lib", content: deriveSrc },
-    { path: "registry/agentic-ui/agentic-theme.tsx", type: "registry:ui", content: themeSrc },
+    { path: "registry/looply/looply-theme-derive.ts", type: "registry:lib", content: deriveSrc },
+    { path: "registry/looply/looply-theme.tsx", type: "registry:ui", content: themeSrc },
   ],
   docs: [
-    'Wrap your app or one section: <AgenticTheme brand="#7c3aed">...</AgenticTheme>',
+    'Wrap your app or one section: <LooplyTheme brand="#7c3aed">...</LooplyTheme>',
     "Or paste CSS into your stylesheet: console.log(themeCss(deriveTheme(\"#7c3aed\")))",
     `Try colours at ${SITE_URL} (the Brand button, bottom left).`,
   ].join("\n"),
@@ -159,7 +159,7 @@ for (const sample of sampleThemes) {
 
 writeFileSync(
   join(outDir, "registry.json"),
-  JSON.stringify({ $schema: "https://ui.shadcn.com/schema/registry.json", name: "agentic-ui", homepage: SITE_URL, items: index }, null, 2),
+  JSON.stringify({ $schema: "https://ui.shadcn.com/schema/registry.json", name: "looply", homepage: SITE_URL, items: index }, null, 2),
 );
 
 // SHA-256 of every registry file, so anyone can check that what they downloaded is what we published:

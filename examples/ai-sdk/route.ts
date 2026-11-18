@@ -1,5 +1,5 @@
 // app/api/chat/route.ts in your project.
-// A real agent behind the Agentic UI patterns: one tool that runs on its own, one that needs approval.
+// A real agent behind the Looply patterns: one tool that runs on its own, one that needs approval.
 // Uses the Vercel AI SDK (npm i ai @ai-sdk/react zod). The model string goes through the AI Gateway;
 // swap in any provider model you use.
 import { convertToModelMessages, stepCountIs, streamText, tool, type UIMessage } from "ai";

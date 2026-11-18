@@ -122,19 +122,19 @@ export default function Tokens() {
 
         <h3 className="mt-6 font-medium text-foreground">2. Wrap with your colour</h3>
         <p className="mt-1 text-sm text-muted-foreground">
-          Installs <code>AgenticTheme</code> and its colour maths (no other dependencies). It takes hex, <code>rgb()</code>, <code>hsl()</code> or <code>oklch()</code>.
+          Installs <code>LooplyTheme</code> and its colour maths (no other dependencies). It takes hex, <code>rgb()</code>, <code>hsl()</code> or <code>oklch()</code>.
           Wrap the whole app, or one section with its own colour.
         </p>
         <div className="mt-3 space-y-3">
           <CodeBlock code={`npx shadcn@latest add "${origin}/r/v${LATEST_RELEASE}/theme-brand.json"`} file="terminal" />
           <CodeBlock
-            code={`import { AgenticTheme } from "@/components/ui/agentic-theme"
+            code={`import { LooplyTheme } from "@/components/ui/looply-theme"
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
-    <AgenticTheme brand="#7c3aed" textColor="white">
+    <LooplyTheme brand="#7c3aed" textColor="white">
       {children}
-    </AgenticTheme>
+    </LooplyTheme>
   )
 }`}
             file="layout.tsx"

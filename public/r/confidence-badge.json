@@ -49,7 +49,7 @@
   },
   "files": [
     {
-      "path": "registry/agentic-ui/confidence-badge.tsx",
+      "path": "registry/looply/confidence-badge.tsx",
       "type": "registry:ui",
       "content": "import { CircleCheck, CircleHelp, TriangleAlert } from \"lucide-react\";\nimport { cn } from \"@/lib/utils\";\n\ntype Props = {\n  /** 0 to 1 */\n  value: number;\n  reason?: string;\n  className?: string;\n};\n\nconst LEVELS = [\n  { min: 0.8, label: \"High confidence\", style: \"bg-success/10 text-success border-success/30\", Icon: CircleCheck },\n  { min: 0.5, label: \"Medium confidence\", style: \"bg-warning/10 text-warning border-warning/30\", Icon: CircleHelp },\n  { min: 0, label: \"Low confidence\", style: \"bg-danger/10 text-danger border-danger/30\", Icon: TriangleAlert },\n];\n\n/** Label plus icon plus text: never colour alone, so it works for colour-blind users. */\nexport function ConfidenceBadge({ value, reason, className }: Props) {\n  const level = LEVELS.find((l) => value >= l.min)!;\n  const pct = Math.round(value * 100);\n  return (\n    <div className={cn(\"inline-flex flex-col gap-1.5\", className)}>\n      <span\n        title={reason}\n        className={cn(\"inline-flex w-fit items-center gap-1.5 rounded-full border px-2.5 py-1 text-sm\", level.style)}\n      >\n        <level.Icon size={14} aria-hidden />\n        {level.label}\n        <span className=\"tabular-nums opacity-70\">{pct}%</span>\n      </span>\n      {reason && <span className=\"max-w-md text-sm text-muted-foreground\">{reason}</span>}\n      {value < 0.5 && <span className=\"max-w-md text-sm text-danger\">Please verify this before acting on it.</span>}\n    </div>\n  );\n}\n"
     }

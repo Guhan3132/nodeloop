@@ -7,7 +7,7 @@ export * from "./derive";
  * Brand theming for Looply. Give it one hex colour and it works out the three tokens a brand
  * touches (primary, primary-foreground, ring) for light and dark, and checks them for contrast:
  *
- *   <AgenticTheme brand="#7c3aed">...components...</AgenticTheme>
+ *   <LooplyTheme brand="#7c3aed">...components...</LooplyTheme>
  *
  * or, without a wrapper, paste the CSS it produces into your global stylesheet:
  *
@@ -32,14 +32,17 @@ type Props = {
  * Applies a brand colour to everything inside it. Components follow the nearest `.dark` class, as
  * usual, so light and dark both work. An invalid colour changes nothing.
  */
-export function AgenticTheme({ brand, tintNeutrals, textColor, className, style, children }: Props) {
+export function LooplyTheme({ brand, tintNeutrals, textColor, className, style, children }: Props) {
   const id = useId().replace(/[^a-zA-Z0-9_-]/g, "");
   const theme = deriveTheme(brand, { tintNeutrals, textColor });
-  const scope = `[data-agentic-theme="${id}"]`;
+  const scope = `[data-looply-theme="${id}"]`;
   return (
-    <div data-agentic-theme={id} className={className} style={style}>
+    <div data-looply-theme={id} className={className} style={style}>
       {theme && <style>{themeCss(theme, { light: `${scope}, ${scope} .light, .light ${scope}`, dark: `.dark ${scope}, ${scope}.dark, ${scope} .dark` })}</style>}
       {children}
     </div>
   );
 }
+
+/** @deprecated Renamed to LooplyTheme in 0.7.0. Kept so existing imports keep working. */
+export const AgenticTheme = LooplyTheme;
