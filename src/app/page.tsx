@@ -4,10 +4,28 @@ import { Logo } from "@/components/Logo";
 import { HeroDemo } from "@/components/HeroDemo";
 import { PixelField } from "@/components/PixelField";
 import { categories, patterns } from "@/registry";
+import { JsonLd } from "@/components/JsonLd";
+import { REPO_URL, SITE_URL } from "@/lib/site";
+
+const homeJsonLd = [
+  { "@type": "WebSite", "@id": `${SITE_URL}/#website`, url: SITE_URL, name: "Nodeloop", description: "Live, copyable UX patterns for AI agents." },
+  {
+    "@type": "SoftwareSourceCode",
+    "@id": `${SITE_URL}/#source`,
+    name: "Nodeloop",
+    description: "Open-source React components for AI agent UIs: streaming, trust, approval, planning, chat and input.",
+    codeRepository: REPO_URL,
+    license: "https://opensource.org/licenses/MIT",
+    programmingLanguage: "TypeScript",
+    runtimePlatform: "React",
+    url: SITE_URL,
+  },
+];
 
 export default function Home() {
   return (
     <main>
+      <JsonLd data={homeJsonLd} />
       <section className="mx-auto max-w-6xl px-5 pb-14 pt-10 sm:pb-20 sm:pt-16">
         <span className="inline-flex items-center gap-2 rounded-md border border-border bg-card py-1 pl-1 pr-3 text-xs font-medium text-foreground/80">
           <Logo size={20} />

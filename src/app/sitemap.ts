@@ -13,6 +13,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/tokens`, lastModified: latest, priority: 0.7 },
     { url: `${base}/customize`, lastModified: latest, priority: 0.6 },
     { url: `${base}/playground`, lastModified: latest, priority: 0.8 },
+    { url: `${base}/guides/agent-ui-patterns`, lastModified: latest, priority: 0.8 },
     ...patterns.map((p) => ({ url: `${base}/components/${p.slug}`, lastModified: new Date(RELEASES[p.since ?? "0.1.0"] ?? RELEASES["0.1.0"]), priority: 0.7 })),
   ];
 }

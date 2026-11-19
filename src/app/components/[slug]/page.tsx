@@ -12,8 +12,10 @@ import { PatternCard } from "@/components/PatternCard";
 import { SectionTabs } from "@/components/SectionTabs";
 import { getPattern, patterns } from "@/registry";
 import { demos } from "@/registry/demos";
+import { guidance, searchTitles } from "@/registry/guidance";
 import { tags, usage } from "@/registry/usage";
 import { SITE_URL } from "@/lib/site";
+import { JsonLd } from "@/components/JsonLd";
 
 export function generateStaticParams() {
   return patterns.map((p) => ({ slug: p.slug }));
@@ -23,12 +25,13 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const p = getPattern((await params).slug);
   if (!p) return {};
   const url = `/components/${p.slug}`;
+  const title = searchTitles[p.slug] ?? p.title;
   return {
-    title: p.title,
+    title,
     description: p.summary,
     alternates: { canonical: url },
-    openGraph: { type: "article", title: `${p.title} · Nodeloop`, description: p.summary, url },
-    twitter: { card: "summary_large_image", title: `${p.title} · Nodeloop`, description: p.summary },
+    openGraph: { type: "article", title: `${title} · Nodeloop`, description: p.summary, url },
+    twitter: { card: "summary_large_image", title: `${title} · Nodeloop`, description: p.summary },
   };
 }
 
@@ -50,6 +53,28 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
 
   return (
     <main className="pb-24 pt-8">
+      <JsonLd
+        data={[
+          {
+            "@type": "TechArticle",
+            headline: pattern.title,
+            description: pattern.summary,
+            url: `${SITE_URL}/components/${pattern.slug}`,
+            isPartOf: { "@id": `${SITE_URL}/#website` },
+            articleSection: pattern.category,
+            license: "https://opensource.org/licenses/MIT",
+            author: { "@type": "Organization", name: "Nodeloop", url: SITE_URL },
+          },
+          {
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              { "@type": "ListItem", position: 1, name: "Patterns", item: SITE_URL },
+              { "@type": "ListItem", position: 2, name: pattern.category },
+              { "@type": "ListItem", position: 3, name: pattern.title, item: `${SITE_URL}/components/${pattern.slug}` },
+            ],
+          },
+        ]}
+      />
       <div className="mx-auto max-w-6xl px-5">
       <nav aria-label="Breadcrumb" className="flex items-center gap-1.5 text-sm text-muted-foreground">
         <Link href="/" className="hover:text-foreground">
@@ -119,6 +144,11 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
 
           <section id="about" className="scroll-mt-32 pt-8">
             <p className="max-w-2xl leading-relaxed text-foreground/80">{pattern.why}</p>
+            {(guidance[slug] ?? []).map((paragraph) => (
+              <p key={paragraph.slice(0, 40)} className="mt-4 max-w-2xl leading-relaxed text-foreground/80">
+                {paragraph}
+              </p>
+            ))}
             <p className="mt-4 max-w-2xl text-sm leading-relaxed text-muted-foreground">
               Built with React and Tailwind. Copy the prompt and paste it into Claude Code, Cursor or Lovable: your agent adds{" "}
               {pattern.title} to your project and fits it to your theme.

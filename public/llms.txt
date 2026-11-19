@@ -1,0 +1,21 @@
+# Nodeloop
+
+> Open-source React components (MIT) that show how a good AI agent behaves: streaming, trust, approval, planning, chat and input. Every pattern runs as a live simulation and can be copied into a project. Built with React, Tailwind and shadcn-ready.
+
+Source: https://github.com/Guhan3132/nodeloop
+
+## Patterns
+
+- [Home](https://nodeloop.vercel.app/): full gallery of agent UI patterns
+- [Guide: UX patterns for AI agents](https://nodeloop.vercel.app/guides/agent-ui-patterns): how to choose a pattern for each agent job
+- [Get started](https://nodeloop.vercel.app/get-started): install and use the components
+- [Customising components](https://nodeloop.vercel.app/customize): theming and changes
+- [Tokens and theming](https://nodeloop.vercel.app/tokens): design tokens
+- [Playground](https://nodeloop.vercel.app/playground): the full agent flow in one place
+- [About](https://nodeloop.vercel.app/about): what Nodeloop is
+
+## Component pages
+
+Each page has a live demo, the source code, and usage notes.
+
+- [Full sitemap](https://nodeloop.vercel.app/sitemap.xml)
