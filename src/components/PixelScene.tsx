@@ -2,10 +2,10 @@
 
 import { useEffect, useRef } from "react";
 
-/** One canvas pixel is this many screen pixels, so the scene reads as pixel art. */
-const SCREEN_PIXEL = 6;
-/** Pixel art moves in steps, not smooth motion. This is also cheaper. */
-const FPS = 12;
+/** One canvas pixel is this many screen pixels. Small enough to read as a fine pixel grid. */
+const SCREEN_PIXEL = 3;
+/** Smooth enough to feel premium, still cheap at this resolution. */
+const FPS = 24;
 
 type Palette = { sky: string; sun: string; far: string; near: string; cloud: string; ink: string };
 
@@ -26,9 +26,9 @@ function readPalette(): Palette {
 // Clouds are blocks in canvas pixels, relative to the cloud's own corner. `y` is a fraction of the height.
 // `x` is the starting position as a fraction of the width, so the clouds do not begin stacked together.
 const CLOUDS = [
-  { x: 0.12, y: 0.16, speed: 1.6, parts: [[0, 2, 10, 3], [3, 0, 5, 3], [9, 1, 6, 4]] },
-  { x: 0.48, y: 0.34, speed: 0.9, parts: [[0, 1, 7, 3], [4, 0, 5, 2]] },
-  { x: 0.8, y: 0.1, speed: 2.4, parts: [[0, 1, 5, 2], [2, 0, 3, 2]] },
+  { x: 0.12, y: 0.16, speed: 1.2, parts: [[0, 2, 10, 3], [3, 0, 5, 3], [9, 1, 6, 4]] },
+  { x: 0.48, y: 0.34, speed: 0.7, parts: [[0, 1, 7, 3], [4, 0, 5, 2]] },
+  { x: 0.8, y: 0.1, speed: 1.8, parts: [[0, 1, 5, 2], [2, 0, 3, 2]] },
 ];
 
 const BIRDS = [0, 1, 2];
@@ -37,11 +37,19 @@ function draw(ctx: CanvasRenderingContext2D, w: number, h: number, t: number, p:
   ctx.fillStyle = p.sky;
   ctx.fillRect(0, 0, w, h);
 
-  // Sun, gently breathing. It sits at the right edge and stays small, so the headline and intro keep a clear background.
-  const r = Math.max(3, Math.round(h * (0.07 + Math.sin(t * 0.8) * 0.004)));
+  // Sun, gently breathing, with a faint halo. It sits at the right edge and stays small, so the headline keeps a clear background.
+  const r = Math.max(3, Math.round(h * (0.07 + Math.sin(t * 0.6) * 0.003)));
+  const sx = Math.round(w * 0.92);
+  const sy = Math.round(h * 0.2);
+  ctx.globalAlpha = 0.08;
   ctx.fillStyle = p.sun;
   ctx.beginPath();
-  ctx.arc(Math.round(w * 0.92), Math.round(h * 0.2), r, 0, Math.PI * 2);
+  ctx.arc(sx, sy, Math.round(r * 2.1), 0, Math.PI * 2);
+  ctx.fill();
+  ctx.globalAlpha = 1;
+  ctx.fillStyle = p.sun;
+  ctx.beginPath();
+  ctx.arc(sx, sy, r, 0, Math.PI * 2);
   ctx.fill();
 
   // Clouds drift left at different speeds, and wrap around.
@@ -58,7 +66,7 @@ function draw(ctx: CanvasRenderingContext2D, w: number, h: number, t: number, p:
 
   // Two hill ridges, the far one lighter, with a shift that makes them drift.
   const ridge = (x: number, base: number, amp: number, phase: number) =>
-    Math.round(base + Math.sin(x * 0.07 + phase + t * 0.2) * amp + Math.sin(x * 0.19 + phase * 2) * amp * 0.5);
+    Math.round(base + Math.sin(x * 0.05 + phase + t * 0.08) * amp + Math.sin(x * 0.13 + phase * 2) * amp * 0.5);
 
   ctx.fillStyle = p.far;
   for (let x = 0; x < w; x++) {
@@ -66,9 +74,18 @@ function draw(ctx: CanvasRenderingContext2D, w: number, h: number, t: number, p:
     ctx.fillRect(x, top, 1, h - top);
   }
 
+  // A middle ridge in the near colour at half strength, then the near ridge, so the hills have depth.
+  ctx.globalAlpha = 0.5;
   ctx.fillStyle = p.near;
   for (let x = 0; x < w; x++) {
-    const top = ridge(x, h * 0.76, h * 0.035, 0.4);
+    const top = ridge(x, h * 0.7, h * 0.04, 0.9);
+    ctx.fillRect(x, top, 1, h - top);
+  }
+  ctx.globalAlpha = 1;
+
+  ctx.fillStyle = p.near;
+  for (let x = 0; x < w; x++) {
+    const top = ridge(x, h * 0.8, h * 0.03, 0.4);
     ctx.fillRect(x, top, 1, h - top);
   }
 
@@ -76,7 +93,7 @@ function draw(ctx: CanvasRenderingContext2D, w: number, h: number, t: number, p:
   ctx.fillStyle = p.ink;
   ctx.globalAlpha = 0.35;
   for (let x = 4; x < w - 4; x += 15) {
-    const top = ridge(x, h * 0.76, h * 0.035, 0.4);
+    const top = ridge(x, h * 0.8, h * 0.03, 0.4);
     ctx.fillRect(x, top - 4, 1, 1);
     ctx.fillRect(x - 1, top - 3, 3, 1);
     ctx.fillRect(x - 2, top - 2, 5, 2);
@@ -86,7 +103,7 @@ function draw(ctx: CanvasRenderingContext2D, w: number, h: number, t: number, p:
   // Birds crossing the sky, flapping by alternating frames.
   ctx.fillStyle = p.ink;
   for (const i of BIRDS) {
-    const bx = Math.round(w - (((t * 5 + i * 53) % (w + 30)) + w * 0.02));
+    const bx = Math.round(w - (((t * 3 + i * 53) % (w + 30)) + w * 0.02));
     const by = Math.round(h * (0.18 + i * 0.07) + Math.sin(t + i) * 1.5);
     const up = Math.floor(t * 4 + i) % 2 === 0;
     ctx.fillRect(bx - 2, by + (up ? -1 : 0), 1, 1);
