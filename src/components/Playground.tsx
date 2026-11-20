@@ -3,6 +3,7 @@
 import { Monitor, Moon, RotateCw, Smartphone, Sun } from "lucide-react";
 import { useEffect, useRef, useState, type ReactNode } from "react";
 import { cn } from "@/lib/cn";
+import { takeFromHome } from "@/lib/handoff";
 import { toolsOf } from "@/lib/simulator/derive";
 import { tokens } from "@/lib/simulator/helpers";
 import type { AgentEvent, Step } from "@/lib/simulator/types";
@@ -237,6 +238,15 @@ function PlaygroundChat() {
     setItems([]);
     setFlow({ turn: turns.current, script: SCRIPTS[kind ?? pick(q)], prompt: q });
   };
+
+  // A message sent from the home page starts here once. takeFromHome() clears it, so a reload does not run it again.
+  useEffect(() => {
+    const prompt = takeFromHome();
+    // One read of a value that lives outside React, so starting the flow here is intended.
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    if (prompt) begin(prompt);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   const typing = !!flow && sim.status === "running" && blocks.length === 0;
 
