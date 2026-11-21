@@ -51,7 +51,7 @@
     "sugar-high": "^2.6.4"
   },
   "devDependencies": {
-    "@ai-sdk/react": "^4.0.166",
+    "@ai-sdk/react": "^4.0.181",
     "@eslint/eslintrc": "^3",
     "@tailwindcss/postcss": "^4",
     "@testing-library/jest-dom": "^7.0.1",
